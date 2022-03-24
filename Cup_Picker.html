@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Mario Kart Cup Picker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: -2;
+      /* The image used */
+      background-image: url("img/BGimg.jpg");
+
+      /* Full height */
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      color: aliceblue;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function pickCup() {
+      let cupNum = Math.floor(Math.random() * 14)
+      console.log(cupNum)
+      const cupNames = [
+        "Mushroom",
+        "Flower",
+        "Star",
+        "Special",
+        "Egg",
+        "Crossing",
+        "Shell",
+        "Banana",
+        "Leaf",
+        "Lightning",
+        "Triforce",
+        "Bell",
+        "Golden Dash",
+        "Lucky Cat",];
+
+      document.getElementById("icon").src = "img/" + cupNames[cupNum].toLowerCase() + "_icon.png";
+      document.getElementById("cup").innerHTML = cupNames[cupNum] + " Cup";
+    }
+  </script>
+  <div class="mx-3 my-3 bg">
+    <h1>Welcome to the Mario Kart Cup Picker</h1>
+    <div class="col text-center mt-5">
+      <img id="icon" class="img-fluid mx-auto mb-3" src="img/item_box.png">
+      <h3 id="cup" class="mb-5"></h3>
+      <button type="button" class="btn btn-info" onclick="pickCup()">Pick a Cup</button>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
